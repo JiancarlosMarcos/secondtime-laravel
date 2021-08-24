@@ -1,5 +1,5 @@
 @extends('template/principal')
-@section('contenido')    
+@section('contenido')  
     <section class="my-carrucel">
         <div id="carrucel">
             <div>
