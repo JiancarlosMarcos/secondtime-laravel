@@ -24,3 +24,4 @@ Route::view('tienda','tienda',['name_pg'=>'Tienda'])->name('tienda');
 Route::view('terminos-y-condiciones','terminos-y-condiciones',['name_pg'=>'Terminos y condiciones'])->name('terminos');
 Route::view('login','login',['name_pg'=>'Login'])->name('login');
 Route::view('registro','register',['name_pg'=>'Registro'])->name('registro');
+Route::view('ayuda/cuanto-pago-por-vender','ayuda/cuanto-pago-por-vender',['name_pg'=>'cuanto-pago-por-vender'])->name('cuanto-pago-por-vender');

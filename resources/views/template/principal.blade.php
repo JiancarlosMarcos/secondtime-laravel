@@ -1,58 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/style.css'); }}">
     <title>{{$name_pg}}</title>
 </head>
 <body>
-<header class="my-header bg-principal">
-<div class="container p-y-2 grid gap-1 col-12">
-    <div class="span-2 span-md-3 span-sm-12 span-pk-12">
-        <a href="{{ route('home')}}">SecondTime</a>
-    </div>
-    <form action="" class="span-7 span-md-6 span-sm-12 span-pk-12">
-        <input type="search" placeholder="buscar...">
-        <buttom type="submit" value="buscar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"> <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>            
-        </buttom>
-    </form>
-    <div class="span-3 span-md-3 span-sm-12 span-pk-12">
-        <a href="{{ route('login')}}" class="btn my-btn-s m-x">Acceso</a>
-        <a href="{{ route('registro')}}" class="btn my-btn-p bg-white m-x">Registrate</a>
-    </div>
-</div>
-</header>
-    <nav class="my-nav bg-white">
-        <div class="container p-y-1">
-            <a href="{{ route('tienda')}}" class="">Hogar</a>
-            <a href="{{ route('tienda')}}" class="p-x">Electrodomesticos</a>
-            <a href="{{ route('tienda')}}" class="p-x">Electronica</a>
-            <a href="{{ route('tienda')}}" class="p-x">Gadgets</a>
-            <a href="{{ route('tienda')}}" class="p-x">Clulares</a>
-            <a href="{{ route('tienda')}}" class="p-x">Computadoras</a>
-            <a href="{{ route('tienda')}}" class="p-x">Ropa</a>
-            <a href="{{ route('tienda')}}" class="p-x">Libros</a>
-        </div>
-    </nav>    
-    <div class="container-fluid">
-        @yield('contenido')
-    </div>
-    <footer>
-        <div class="my-footer container-fluid">
-            <div class="d-flex justify-content-center b-bottom">
-                <a href="{{ route('home')}}">Home</a>
-                <a href="">Preguntas frecuentes</a>
-                <a href="#">Politicas de privacidad</a>
-                <a href="{{ route('terminos')}}">Terminos y condiciones</a>
-                <a href="#">Contacto</a>
-            </div>
-            <div class="d-flex justify-content-center">
-                <span>© 2021 SecondTime</span>
+
+    <header class="p-3 bg-principal text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="{{ route('home')}}" class="d-flex align-items-center mb-2 mb-lg-0 py-2 text-white text-decoration-none h3">
+                    SecondTime
+                </a>
+
+                <div class="nav col-12 col-lg-8 m-lg-auto mb-2 justify-content-center mb-md-2">
+                    <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+                </div>
+                <div class="col-auto">
+                    <a href="{{ route('login')}}" class="btn btn-outline-light me-2">Login</a>
+                    <a href="{{ route('registro')}}" class="btn btn-warning">Sign-up</a>
+                </div>
             </div>
         </div>
-    </footer>
+    </header>
+    
+    <nav class="my-nav">
+        <div class="container py-1 nav me-auto">
+            <a href="{{ route('tienda')}}" class="nav-link">Hogar</a>
+            <a href="{{ route('tienda')}}" class="nav-link">Electrodomesticos</a>
+            <a href="{{ route('tienda')}}" class="nav-link">Electronica</a>
+            <a href="{{ route('tienda')}}" class="nav-link">Gadgets</a>
+            <a href="{{ route('tienda')}}" class="nav-link">Clulares</a>
+            <a href="{{ route('tienda')}}" class="nav-link">Computadoras</a>
+            <a href="{{ route('tienda')}}" class="nav-link">Ropa</a>
+            <a href="{{ route('tienda')}}" class="nav-link">Libros</a>
+        </div>
+    </nav> 
+
+    @yield('contenido')
+
+    <div class="my-footer container-fluid b-top">
+        <footer class=" container py-2 my-2">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="{{ route('home')}}" class="nav-link px-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Inicio</font></font></a></li>
+            <li class="nav-item"><a href="{{ route('terminos')}}" class="nav-link px-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Terminos y condiciones</font></font></a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Politicas de privacidad</font></font></a></li>
+            <li class="nav-item"><a href="{{ route('cuanto-pago-por-vender')}}" class="nav-link px-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ayuda</font></font></a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sobre Nosotros</font></font></a></li>
+            </ul>
+            <p class="text-center text-muted"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">© 2021 SecondTime</font></font></p>
+        </footer>
+    </div>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 </html>
